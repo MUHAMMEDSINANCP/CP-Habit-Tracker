@@ -16,7 +16,7 @@ class MonthlySummary extends StatelessWidget {
   Widget build(BuildContext context) {
     // Calculate the number of days to display for both past and future dates
     const int pastDaysToShow = 35;
-    const int futureDaysToShow = 14;
+    const int futureDaysToShow = 22;
 
     // Convert the provided start date string to a DateTime object
     DateTime parsedStartDate = createDateTimeObject(startDate);

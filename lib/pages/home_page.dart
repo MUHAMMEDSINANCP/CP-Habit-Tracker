@@ -122,9 +122,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: createNewHabit,
+            icon: const Icon(
+              Icons.add_task,
+              size: 29,
+            ),
+          )
+        ],
         leading: const Icon(
           Icons.published_with_changes,
-          size: 27,
+          size: 30,
         ),
         centerTitle: true,
         title: RichText(
@@ -183,7 +192,7 @@ class _HomePageState extends State<HomePage> {
           // list of habits
           ListView.builder(
             shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             itemCount: db.todaysHabitList.length,
             itemBuilder: (context, index) {
               final reversedIndex = db.todaysHabitList.length - index - 1;

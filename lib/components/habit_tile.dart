@@ -32,7 +32,7 @@ class HabitTile extends StatelessWidget {
               icon: Icons.edit,
               borderRadius: BorderRadius.circular(12),
               autoClose: true,
-              label: "Edit",
+              label: "EDIT",
             ),
 
             // delete option
@@ -40,7 +40,7 @@ class HabitTile extends StatelessWidget {
               onPressed: deleteTapped,
               backgroundColor: Colors.red.shade400,
               icon: Icons.delete,
-              label: "Delete",
+              label: "DELETE",
               borderRadius: BorderRadius.circular(12),
             ),
           ],
@@ -67,7 +67,7 @@ class HabitTile extends StatelessWidget {
                 child: Text(
                   habitName,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     decoration: habitCompleted
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,

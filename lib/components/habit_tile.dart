@@ -55,7 +55,7 @@ class HabitTile extends StatelessWidget {
             children: [
               // checkbox
               Transform.scale(
-                scale: 1.35,
+                scale: 1.0,
                 child: Checkbox(
                   value: habitCompleted,
                   onChanged: onChanged,
@@ -67,7 +67,7 @@ class HabitTile extends StatelessWidget {
                 child: Text(
                   habitName,
                   style: TextStyle(
-                    fontSize: 23,
+                    fontSize: 18,
                     decoration: habitCompleted
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,

@@ -122,6 +122,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(
+          Icons.published_with_changes,
+          size: 27,
+        ),
         centerTitle: true,
         title: RichText(
           text: const TextSpan(

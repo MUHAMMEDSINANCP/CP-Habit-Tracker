@@ -14,15 +14,30 @@ class MonthlySummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Calculate the number of days to display for both past and future dates
+    const int pastDaysToShow = 40;
+    const int futureDaysToShow = 10;
+
+    // Convert the provided start date string to a DateTime object
+    DateTime parsedStartDate = createDateTimeObject(startDate);
+
+    // Calculate the start date for past days
+    DateTime calculatedPastStartDate =
+        parsedStartDate.subtract(const Duration(days: pastDaysToShow));
+
+    // Calculate the end date for future days
+    DateTime calculatedFutureEndDate =
+        parsedStartDate.add(const Duration(days: futureDaysToShow));
+
     return Container(
       padding: const EdgeInsets.only(top: 25, bottom: 25),
       child: HeatMap(
-        startDate: createDateTimeObject(startDate),
-        endDate: DateTime.now().add(const Duration(days: 0)),
+        startDate: calculatedPastStartDate,
+        endDate: calculatedFutureEndDate,
         datasets: datasets,
         colorMode: ColorMode.color,
         defaultColor: Colors.grey[200],
-        textColor: Colors.white,
+        textColor: Colors.black38,
         showColorTip: false,
         showText: true,
         scrollable: true,

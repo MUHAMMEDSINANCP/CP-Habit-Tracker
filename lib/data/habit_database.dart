@@ -11,8 +11,8 @@ class HabitDatabase {
   // create initial default data
   void createDefaultData() {
     todaysHabitList = [
-      ["Run", false],
-      ["Read", false],
+      ["Drink 4L Water Daily", false],
+      ["Do Excercises", false],
     ];
 
     _myBox.put("START_DATE", todaysDateFormatted());
@@ -20,12 +20,16 @@ class HabitDatabase {
 
   // load data if it already exists
   void loadData() {
-    // if it's a new day, get habit list from database
-    if (_myBox.get(todaysDateFormatted()) == null) {
-      todaysHabitList = _myBox.get("CURRENT_HABIT_LIST");
+    // Load data from storage
+    List<dynamic>? storedData = _myBox.get("CURRENT_HABIT_LIST");
+
+    // Ensure the data is not null and load it in reverse order
+    if (storedData != null) {
+      todaysHabitList = List.from(storedData.reversed);
+
       // set all habit completed to false since it's a new day
       for (int i = 0; i < todaysHabitList.length; i++) {
-        todaysHabitList[i][1] = false;
+        todaysHabitList[i][1] = storedData[storedData.length - i - 1][1];
       }
     }
     // if it's not a new day, load todays list
@@ -36,11 +40,14 @@ class HabitDatabase {
 
   // update database
   void updateDatabase() {
+    // Reverse the habit list before updating
+    final reversedList = List.from(todaysHabitList.reversed);
     // update todays entry
-    _myBox.put(todaysDateFormatted(), todaysHabitList);
+    _myBox.put(todaysDateFormatted(), reversedList);
 
     // update universal habit list in case it changed (new habit, edit habit, delete habit)
-    _myBox.put("CURRENT_HABIT_LIST", todaysHabitList);
+    // _myBox.put("CURRENT_HABIT_LIST", todaysHabitList);
+    _myBox.put("CURRENT_HABIT_LIST", reversedList);
 
     // calculate habit complete percentages for each day
     calculateHabitPercentages();
@@ -99,6 +106,7 @@ class HabitDatabase {
       };
 
       heatMapDataSet.addEntries(percentForEachDay.entries);
+      // ignore: avoid_print
       print(heatMapDataSet);
     }
   }

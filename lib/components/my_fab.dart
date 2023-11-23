@@ -11,6 +11,7 @@ class MyFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      tooltip: "Add New Habit",
       onPressed: onPressed,
       child: const Icon(Icons.add),
     );

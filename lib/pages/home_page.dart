@@ -121,15 +121,60 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: RichText(
+          text: const TextSpan(
+            style: TextStyle(
+              fontSize: 23,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                text: 'CP ',
+                style: TextStyle(
+                  letterSpacing: 2,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: 'Habit Tracker',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+        elevation: 0,
+      ),
       backgroundColor: Colors.grey[300],
       floatingActionButton: MyFloatingActionButton(onPressed: createNewHabit),
       body: ListView(
         children: [
-          // monthly summary heat map
-          MonthlySummary(
-            datasets: db.heatMapDataSet,
-            startDate: _myBox.get("START_DATE"),
-          ),
+          // Check if todaysHabitList is empty
+          if (db.todaysHabitList.isEmpty)
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.width * 0.85),
+                child: const Text(
+                  'Your Habit list is Empty!',
+                  style: TextStyle(
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+          if (db.todaysHabitList.isNotEmpty)
+
+            // monthly summary heat map
+            MonthlySummary(
+              datasets: db.heatMapDataSet,
+              startDate: _myBox.get("START_DATE"),
+            ),
 
           // list of habits
           ListView.builder(
@@ -137,12 +182,14 @@ class _HomePageState extends State<HomePage> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: db.todaysHabitList.length,
             itemBuilder: (context, index) {
+              final reversedIndex = db.todaysHabitList.length - index - 1;
+
               return HabitTile(
-                habitName: db.todaysHabitList[index][0],
-                habitCompleted: db.todaysHabitList[index][1],
-                onChanged: (value) => checkBoxTapped(value, index),
-                settingsTapped: (context) => openHabitSettings(index),
-                deleteTapped: (context) => deleteHabit(index),
+                habitName: db.todaysHabitList[reversedIndex][0],
+                habitCompleted: db.todaysHabitList[reversedIndex][1],
+                onChanged: (value) => checkBoxTapped(value, reversedIndex),
+                settingsTapped: (context) => openHabitSettings(reversedIndex),
+                deleteTapped: (context) => deleteHabit(reversedIndex),
               );
             },
           )

@@ -123,11 +123,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-            onPressed: createNewHabit,
-            icon: const Icon(
-              Icons.add_task,
-              size: 29,
+          Padding(
+            padding: const EdgeInsets.only(right: 2),
+            child: IconButton(
+              onPressed: createNewHabit,
+              icon: const Icon(
+                Icons.add_task,
+                size: 29,
+              ),
             ),
           )
         ],

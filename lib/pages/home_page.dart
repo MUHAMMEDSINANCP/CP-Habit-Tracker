@@ -127,6 +127,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(right: 2),
             child: IconButton(
               onPressed: createNewHabit,
+              tooltip: "Add New Habit",
               icon: const Icon(
                 Icons.add_task,
                 size: 29,
@@ -136,7 +137,7 @@ class _HomePageState extends State<HomePage> {
         ],
         leading: const Icon(
           Icons.published_with_changes,
-          size: 30,
+          size: 31,
         ),
         centerTitle: true,
         title: RichText(

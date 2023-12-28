@@ -4,6 +4,7 @@ CP Habit Tracker is a fully functional habit tracking app built with Flutter. Ut
 
 ### Key Features:
 
+
 Habit Tracking: Efficiently manage habits in a clean and intuitive interface.
 
 Hive Local Storage: Utilizes Hive for seamless local storage.

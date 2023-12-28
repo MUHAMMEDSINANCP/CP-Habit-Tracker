@@ -1,16 +1,28 @@
-# cp_habit_tracker
+## CP Habit Tracker
 
-A new Flutter project.
+CP Habit Tracker is a fully functional habit tracking app built with Flutter. Utilizing Hive for local storage and incorporating clean architecture and Flutter state management, it offers a comprehensive way to manage habits efficiently.
 
-## Getting Started
+### Key Features:
 
-This project is a starting point for a Flutter application.
+Habit Tracking: Efficiently manage habits in a clean and intuitive interface.
 
-A few resources to get you started if this is your first Flutter project:
+Hive Local Storage: Utilizes Hive for seamless local storage.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Clean Architecture: Structured for optimal code organization and scalability.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Flutter State Management: Utilizes Flutter's state management capabilities.
+
+Habit Deletion: Easily delete habits as per user preference.
+
+Calendar Visualization: View habits in a calendar format, with color-coded indications based on completion status.
+
+Heatmap Feature: Displays completed habits in a heatmap, evolving color based on the number of habits completed per day.
+
+### Usage:
+
+CP Habit Tracker provides a holistic approach to habit management, offering a visual representation of habits in both calendar and heatmap formats, encouraging consistency and progress tracking.
+
+### Feedback:
+
+For any suggestions or feedback, please contact us at cpmuhammedsinan@gmail.com. Your inputs are valuable for enhancing CP Habit Tracker.
+

@@ -68,13 +68,14 @@ class HabitTile extends StatelessWidget {
                   habitName,
                   style: TextStyle(
                     fontSize: 16,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w500,
                     decoration: habitCompleted
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,
                   ),
                 ),
               ),
-              const Spacer(),
 
               const Icon(
                 Icons.swipe_left_outlined,

@@ -176,10 +176,10 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.width * 0.85),
                 child: const Text(
-                  'Your Habit list is Empty!',
+                  'No habits on your list!',
                   style: TextStyle(
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 21,
+                    fontWeight: FontWeight.w300,
                     color: Colors.grey,
                   ),
                 ),

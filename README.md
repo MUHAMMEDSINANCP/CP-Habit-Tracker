@@ -1,4 +1,4 @@
-## CP Habit Tracker
+![IMG_20231231_184512](https://github.com/MUHAMMEDSINANCP/CP-Habit-Tracker/assets/68960205/db86cad1-d580-47b7-9339-f2b44a76a273)## CP Habit Tracker
 
 CP Habit Tracker is a fully functional habit tracking app built with Flutter. Utilizing Hive for local storage and incorporating clean architecture and Flutter state management, it offers a comprehensive way to manage habits efficiently.
 
@@ -26,3 +26,9 @@ CP Habit Tracker provides a holistic approach to habit management, offering a vi
 
 For any suggestions or feedback, please contact me at cpmuhammedsinan@gmail.com. Your inputs are valuable for enhancing CP Habit Tracker.
 
+## Screens :
+
+![IMG_20231231_184528](https://github.com/MUHAMMEDSINANCP/CP-Habit-Tracker/assets/68960205/3e5c36e0![IMG_20231231_184512](https://github.com/MUHAMMEDSINANCP/CP-Habit-Tracker/assets/68960205/1663fe13-866a-4adb-89e6-ae00541884e2)
+-4df5-4d72-8982-88c6fe5881a0)
+ ![IMG_20231231_184435](https://github.com/MUHAMMEDSINANCP/CP-Habit-Tracker/assets/68960205/b77fc7a4-a809-4693-a83f-d9c503a93cec)
+![IMG_20231231_184449](https://github.com/MUHAMMEDSINANCP/CP-Habit-Tracker/assets/68960205/7e709a35-6c6c-4ee2-aff3-2bba2e6801c5)
